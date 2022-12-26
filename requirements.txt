@@ -9,5 +9,4 @@ geopandas
 geopy
 shapely
 matplotlib
-math
 openpyxl
