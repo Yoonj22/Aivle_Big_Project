@@ -1,0 +1,15 @@
+joblib 
+matplotlib 
+numpy 
+pandas 
+plotly 
+ply 
+ptyprocess 
+seaborn 
+streamlit 
+scikit-learn
+shapely
+geopandas
+geopy
+math
+streamlit_folium
