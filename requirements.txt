@@ -10,3 +10,4 @@ geopy
 shapely
 matplotlib
 math
+openpyxl
