@@ -14,7 +14,7 @@ from geopy.extra.rate_limiter import RateLimiter
 from shapely.geometry import Point, Polygon, LineString
 import matplotlib.pyplot as plt
 import matplotlib
-import math
+# import math
 
 # 꽉 찬 화면
 st.set_page_config(layout="wide")
