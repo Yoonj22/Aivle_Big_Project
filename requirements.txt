@@ -7,6 +7,6 @@ folium
 streamlit_folium
 geopandas
 geopy
-shapely.geometry
+shapely
 matplotlib
 math
