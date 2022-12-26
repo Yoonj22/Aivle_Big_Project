@@ -86,8 +86,8 @@ with tab1:
     # 직원용 웹사이트
     st.title('직원용 웹사이트')
 
-    st.markdown('#### 차액 기준 내림차순 고객 리스트 TOP 5')    
-    st.dataframe(dt[['단지명','주소','예측월세가격', '기존월세가격', '월수입차액']].head())
+    st.markdown('#### 차액 기준 내림차순 고객 리스트')    
+    st.dataframe(dt[['단지명','주소','예측월세가격', '기존월세가격', '월수입차액']])
 
     st.markdown('#### 고객 정보 검색')
     a,b,c = st.columns(3)
