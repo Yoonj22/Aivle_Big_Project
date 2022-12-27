@@ -185,10 +185,10 @@ with tab1:
             folium.Marker([home_lat, home_lng],tooltip = dt.iloc[i]['단지명'],icon=folium.Icon(color='red',icon='home')).add_to(map)
 
             # 지하철역 marker 추가
-            folium.Marker(location=[metro_lat,metro_lng],tooltip=metro_station,zoom_start=15,icon=folium.Icon(color='blue',icon='star')).add_to(map)
+            folium.Marker(location=[metro_lat,metro_lng],tooltip=metro_station,zoom_start=15,icon=folium.Icon(color='blue', icon='subway', prefix='fa')).add_to(map)
 
             # 버스정류장 marker 추가
-            folium.Marker(location=[bus_lat, bus_lng],tooltip=bus_station,zoom_start=15,icon=folium.Icon(color='blue',icon='star')).add_to(map)
+            folium.Marker(location=[bus_lat, bus_lng],tooltip=bus_station,zoom_start=15,icon=folium.Icon(color='blue',icon='bus', prefix='fa)).add_to(map)
             for k in range(len(munhwa_remain)):
                 mark_at_map(munhwa_remain,k,'blue')
 
