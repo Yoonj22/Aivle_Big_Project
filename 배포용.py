@@ -191,7 +191,7 @@ with tab1:
             folium.Marker(location=[bus_lat, bus_lng],tooltip=bus_station,zoom_start=15,icon=folium.Icon(color='blue',icon='bus', prefix='fa')).add_to(map)
             
             for k in range(len(munhwa_remain)):
-                mark_at_map(munhwa_remain,k,'blue', 'ticket')
+                mark_at_map(munhwa_remain,k,'green', 'ticket')
 
             for k in range(len(munhwa_space_remain)):
                 mark_at_map(munhwa_space_remain,k,'orange', 'hashtag')
