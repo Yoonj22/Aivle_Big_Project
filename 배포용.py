@@ -144,7 +144,7 @@ with tab1:
             m=['기존월세가격','예측월세가격']
             n=[int(tmp['기존월세가격'][i]),int(tmp['예측월세가격'][i])]
             price=pd.DataFrame({'구분':m,'가격':n})
-            fig = px.bar(price, x='구분', y='가격',text_auto=True, width=350, height=500) # text_auto=True 값 표시 여부, title='제목' 
+            fig = px.bar(price, x='구분', y='가격',text_auto=True, width=300, height=500) # text_auto=True 값 표시 여부, title='제목' 
             st.plotly_chart(fig)
             
         # *************************************************************************************
