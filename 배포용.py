@@ -92,7 +92,7 @@ with tab1:
     st.markdown('#### 고객 정보 검색')
     a,b,c = st.columns(3)
 
-    idx = a.text_input(f'index 번호(0~{len(dt)})를 입력하세요') # 유저한테 글자 입력받기
+    idx = a.text_input(f'index 번호(0~{len(dt)-1})를 입력하세요') # 유저한테 글자 입력받기
 
     if idx :
         i=int(idx)
