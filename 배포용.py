@@ -18,7 +18,7 @@ import matplotlib
 st.set_page_config(layout="wide")
 
 # 이미지 가져오기
-st.image('https://github.com/8900j/BIG_project/blob/main/JH_LOGO.png?raw=true')
+st.image('https://github.com/8900j/BIG_project/blob/main/banner.png?raw=true')
 
 # 데이터 가져오기
 dt = pd.read_csv('https://raw.githubusercontent.com/8900j/BIG_project/main/test_predict_complete_undummify.csv')
