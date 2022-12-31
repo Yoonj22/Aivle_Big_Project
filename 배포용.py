@@ -63,18 +63,18 @@ shopping = shopping.to_crs({'init':'epsg:5179'})
 shopping = shopping[['명칭','위도','경도','분류3','geometry']]
 shopping.rename(columns = {'분류3' : '분류'}, inplace =True)
 
-def mark_at_map(df,i,marker_color): 
+def mark_at_map(df,i,marker_color, ic): 
     """[‘red’, ‘blue’, ‘green’, ‘purple’, ‘orange’, ‘darkred’,’lightred’, ‘beige’, ‘darkblue’, ‘darkgreen’, 
     ‘cadetblue’, ‘darkpurple’, ‘white’, ‘pink’, ‘lightblue’, ‘lightgreen’, ‘gray’, ‘black’, ‘lightgray’]"""
     if '분류' in df.columns :
         folium.Marker([df['위도'][i], df['경도'][i]] ,
                       tooltip = df.iloc[i]['분류'] + ' : ' + df.iloc[i]['명칭'] ,
-                      icon = folium.Icon(color =marker_color,)
+                      icon = folium.Icon(color =marker_color,icon=ic, prefix='fa')
                      ).add_to(map)
     else:
         folium.Marker([df['위도'][i],df['경도'][i]] ,
                       tooltip = df.iloc[i]['명칭'],
-                      icon = folium.Icon(color =marker_color,)
+                      icon = folium.Icon(color =marker_color,icon=ic, prefix='fa')
                      ).add_to(map)
 # --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -187,23 +187,23 @@ with tab1:
             # 버스정류장 marker 추가
             folium.Marker(location=[bus_lat, bus_lng],tooltip=bus_station,zoom_start=15,icon=folium.Icon(color='blue',icon='bus', prefix='fa')).add_to(map)
             
-#             for k in range(len(munhwa_remain)):
-#                 mark_at_map(munhwa_remain,k,'green', 'ticket')
-
-#             for k in range(len(munhwa_space_remain)):
-#                 mark_at_map(munhwa_space_remain,k,'orange', 'hashtag')
-
-#             for k in range(len(shopping_remain)):
-#                 mark_at_map(shopping_remain,k,'pink', 'shopping-bag')
-                
             for k in range(len(munhwa_remain)):
-                mark_at_map(munhwa_remain,k,'green')
+                mark_at_map(munhwa_remain,k,'green', 'ticket')
 
             for k in range(len(munhwa_space_remain)):
-                mark_at_map(munhwa_space_remain,k,'orange')
+                mark_at_map(munhwa_space_remain,k,'orange', 'hashtag')
 
             for k in range(len(shopping_remain)):
-                mark_at_map(shopping_remain,k,'pink')
+                mark_at_map(shopping_remain,k,'pink', 'shopping-bag')
+                
+#             for k in range(len(munhwa_remain)):
+#                 mark_at_map(munhwa_remain,k,'green')
+
+#             for k in range(len(munhwa_space_remain)):
+#                 mark_at_map(munhwa_space_remain,k,'orange')
+
+#             for k in range(len(shopping_remain)):
+#                 mark_at_map(shopping_remain,k,'pink')
 
             # 500m 반경 원 추가하기
             folium.Circle(
