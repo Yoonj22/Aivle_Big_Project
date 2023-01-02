@@ -22,6 +22,7 @@ st.image('https://github.com/8900j/BIG_project/blob/main/banner.png?raw=true')
 
 # 데이터 가져오기
 dt = pd.read_csv('https://raw.githubusercontent.com/8900j/BIG_project/main/test_predict_complete_undummify.csv')
+dt.index = dt.index +1
 metro = pd.read_csv('https://raw.githubusercontent.com/8900j/BIG_project/main/subway_re.csv')
 bus = pd.read_csv('https://raw.githubusercontent.com/8900j/BIG_project/main/JUNG_BUS.csv')
 
@@ -88,7 +89,7 @@ with tab1:
     st.markdown('#### 고객 정보 검색')
     a,b,c = st.columns(3)
 
-    idx = a.text_input(f'index 번호(0~{len(dt)-1})를 입력하세요') # 유저한테 글자 입력받기
+    idx = a.text_input(f'index 번호(1~{len(dt)})를 입력하세요') # 유저한테 글자 입력받기
 
     if idx :
         i=int(idx)
