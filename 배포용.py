@@ -92,7 +92,7 @@ with tab1:
     idx = a.text_input(f'index 번호(1~{len(dt)})를 입력하세요') # 유저한테 글자 입력받기
 
     if idx :
-        i=int(idx)-1
+        i=int(int(idx)-1)
         a,b,c,d=st.columns([0.4,0.1,0.8,0.4])
         # 정류장, 지하철 역 표현을 위한 df
         tmp=dt.iloc[[i]]
