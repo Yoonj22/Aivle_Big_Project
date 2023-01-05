@@ -82,7 +82,7 @@ tab1, tab2, tab3 = st.tabs(['에어비앤비 직원용','호스트 희망 임대
 
 with tab1:
 
-    st.markdown('#### 차액 기준 내림차순 고객 리스트')
+    st.markdown('#### 고객 리스트')
     show_df=dt[['단지명','주소','예측월세가격', '기존월세가격', '월수입차액']]
     show_df['예측월세가격']=(show_df['예측월세가격']*10000).astype('int')
     show_df['기존월세가격']=(show_df['기존월세가격']*10000).astype('int')
