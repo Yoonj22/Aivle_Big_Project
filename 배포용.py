@@ -81,7 +81,8 @@ def mark_at_map(df,i,marker_color, ic):
 tab1, tab2, tab3 = st.tabs(['에어비앤비 직원용','호스트 희망 임대인용', '데이터베이스'])
 
 with tab1:
-
+    # 실제 기능 구현된 프로토타입에 해당되는 탭
+    
     st.markdown('#### 고객 리스트')
     show_df=dt[['단지명','주소','예측월세가격', '기존월세가격', '월수입차액']]
     show_df['예측월세가격']=(show_df['예측월세가격']*10000).astype('int')
@@ -210,7 +211,7 @@ with tab1:
             for k in range(len(shopping_remain)):
                 mark_at_map(shopping_remain,k,'pink', 'shopping-bag')
 
-            # 500m 반경 원 추가하기
+            # 1000m 반경 원 추가하기
             folium.Circle(
                 location=[home_lat, home_lng],
                 radius=1000,
@@ -269,7 +270,7 @@ with tab1:
 with tab2:
 
     new_title = '<p style="font-family:Malgun Gothic; color:lightcoral; font-size: 30px;">당신의 공간을 에어비앤비하세요!</p>'
-    temp_title = '<p style="font-family:Malgun Gothic; color:black; font-size: 30px;">-향후 서비스 추가를 위한 탭-</p>'
+    temp_title = '<p style="font-family:Malgun Gothic; color:black; font-size: 30px;">- 향후 서비스 추가를 위한 탭 -</p>'
     
     st.markdown(temp_title, unsafe_allow_html=True)
     st.markdown(new_title, unsafe_allow_html=True)
@@ -387,7 +388,7 @@ with tab2:
 # --------------------------------------------------------------------------------------------------------------------------------------------
 
 with tab3:
-    temp_title = '<p style="font-family:Malgun Gothic; color:black; font-size: 30px;">-향후 서비스 추가를 위한 탭-</p>'
+    temp_title = '<p style="font-family:Malgun Gothic; color:black; font-size: 30px;">- 향후 서비스 추가를 위한 탭 -</p>'
     st.markdown(temp_title, unsafe_allow_html=True)
     
     full_test=pd.read_csv('https://raw.githubusercontent.com/8900j/BIG_project/main/example_full.csv')
