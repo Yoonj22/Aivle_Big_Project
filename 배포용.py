@@ -269,6 +269,9 @@ with tab1:
 with tab2:
 
     new_title = '<p style="font-family:Malgun Gothic; color:lightcoral; font-size: 30px;">당신의 공간을 에어비앤비하세요!</p>'
+    temp_title = '<p style="font-family:Malgun Gothic; color:black; font-size: 30px;">-향후 서비스 추가를 위한 탭-</p>'
+    
+    st.markdown(temp_title, unsafe_allow_html=True)
     st.markdown(new_title, unsafe_allow_html=True)
 
     st.markdown('#### 정보를 입력해주세요.')
@@ -384,6 +387,8 @@ with tab2:
 # --------------------------------------------------------------------------------------------------------------------------------------------
 
 with tab3:
-
+    temp_title = '<p style="font-family:Malgun Gothic; color:black; font-size: 30px;">-향후 서비스 추가를 위한 탭-</p>'
+    st.markdown(temp_title, unsafe_allow_html=True)
+    
     full_test=pd.read_csv('https://raw.githubusercontent.com/8900j/BIG_project/main/example_full.csv')
     st.dataframe(full_test[:3])
